@@ -1,0 +1,159 @@
+/* Resetting padding, margin, and box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header and Navigation Styles */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Baloo Paaji';
+    margin-bottom: 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding-right: 70px;
+    padding-top: 12px;
+    font-family: 'Baloo Paaji', cursive;
+}
+
+header nav h1 {
+    font-size: 35px;
+    color: #594c8d;
+    font-family: 'Baloo Paaji', cursive;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 20px;
+    color: #594c8d;
+    font-size: 20px;
+}
+
+header nav ul li a:hover {
+    background-color: #594c8d;
+    color: white;
+    border-radius: 20px;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding-top: 40px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #594c8d;
+    border-radius: 5px;
+}
+
+#nav-links {
+    display: flex;
+}
+
+#nav-links.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    /* Hide nav items by default on small screens */
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+    }
+
+    /* Show hamburger menu */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Style navigation links when active */
+    #nav-links.active {
+        display: flex;
+    }
+
+    /* Style individual links in the mobile menu */
+    #nav-links li {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    #nav-links li a {
+        font-size: 18px;
+        padding: 15px;
+    }
+}
+
+/* Main content styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-section {
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.product-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.product-section p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 250px;  /* Keeps the image within the max width of 250px */
+    height: auto;      /* Ensure the height scales proportionally */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 100%;   /* Full width of the container on small screens */
+        max-width: 100%; /* Ensures the image fills up available width */
+    }
+}

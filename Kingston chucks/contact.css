@@ -1,0 +1,70 @@
+/* Hamburger Menu - 3 Bars */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 10px;
+}
+
+/* Initial State for Bars */
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* When the menu is active, transform bars into an X */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu Links Visibility */
+#nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+#nav-links.active {
+    display: block;
+}
+
+#nav-links li {
+    margin: 0;
+}
+
+#nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Responsive Design: Show nav links on small screens when clicked */
+@media (max-width: 768px) {
+    #nav-links {
+        display: none;
+        background-color: #333;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    #nav-links.active {
+        display: block;
+    }
+}
